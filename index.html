@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="bootstrap-5.3.6-dist\css\bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div class="container-fluid ">
+	<main class="row wraper ">
+
+		<div class="col-md-4 col-lg-3 col-sm-12 p-0 sidebar py-md-5 py-sm-2 px-4 flex-md-column">
+			<div class="sidebar-links d-flex ">
+				<div class="sidebar-numbers sidebar-numbers-slected">1</div>
+				<div class="sidebar-text d-none flex-sm-row  d-md-inline-block">
+					<p class="text-muted">Step 1</p>
+					<p>Your Info</p>
+				</div>
+			</div>
+			<div class="sidebar-links d-flex ">
+				<div class="sidebar-numbers">2</div>
+				<div class="sidebar-text d-none d-md-inline-block">
+					<p class="text-muted">Step 2</p>
+					<p>select plan</p>
+				</div>
+			</div>
+			<div class="sidebar-links d-flex ">
+				<div class="sidebar-numbers">3</div>
+				<div class="sidebar-text d-none  d-md-inline-block">
+					<p class="text-muted">Step 3</p>
+					<p>add-one</p>
+				</div>
+			</div>
+			<div class="sidebar-links d-flex ">
+				<div class="sidebar-numbers">4</div>
+				<div class="sidebar-text d-none  d-md-inline-block">
+					<p class="text-muted">Step 4</p>
+					<p>summary</p>
+				</div>
+			</div>
+
+		</div>
+		<!-- firststep -->
+		<div class="mainbox firststep shadow col-md-8 col-lg-9 p-md-5">
+			<div class="row ">
+				<h2 class="my-md-1">Personel Info</h2>
+				<small class="text-muted">Please provide your name email phone</small>
+			</div>
+			<div class="row mt-4">
+				<label class="form-label">Name</label>
+				<input type="text" class="" placeholder="e.g. adil" name="">
+			</div>
+			<div class="row mt-2">
+				<label class="form-label">Email</label>
+				<input type="email" class="" placeholder="e.g. adil" name="">
+			</div>
+			<div class="row mt-2">
+				<label class="form-label">Password</label>
+				<input type="Password" class="" placeholder="e.g. adil" name="">
+			</div>
+		</div>
+		<!-- secondstep -->
+		<div class="d-none mainbox  secondstep shadow col-md-8 col-lg-9 p-md-5">
+			<h2>Select Your Plan</h2>
+			<small class="text-muted">You have the option of monthly and yearly billing</small>
+			<div class="plan-level-container d-flex w-100 flex-md-row ">
+				<div class="plan-level selected gap-3">
+					<img src="images/icon-arcade.svg">
+					<span class="p-0 m-0">
+							<h5 class="mt-md-3">Arcade</h5>
+							<p class="text-muted">$9/mo</p>
+					</span>
+				</div>
+				<div class="plan-level">
+					<img src="images/icon-advanced.svg">
+					<span class="p-0 m-0">
+						<h5 class="mt-md-3">Advanced</h5>
+						<p class="text-muted">$12/mo</p>
+					</span>
+					
+
+				</div>
+				<div class="plan-level">
+					<img src="images/icon-pro.svg">
+					<span class="p-0 m-0">
+						<h5 class="mt-md-3">Pro</h5>
+						<p class="text-muted">$15/mo</p>
+					</span>
+				</div>
+			</div>
+			<div class=" border plan-selector d-flex justify-content-center gap-3 ">
+				
+					<h5 class="selected">Monthly</h5>
+					<input type="checkbox" class="" name="">
+					<h5>Yearly</h5>
+				
+			</div>
+		</div>
+		<!-- third step -->
+		<div class="d-none mainbox  thirdstep shadow col-md-8 col-lg-9 p-md-5">
+			<h2>Pick add-one</h2>
+			<small class="text-muted">Add-on enchance your gaming experience</small>
+			<div class="plan-level-container d-flex w-100 flex-md-row flex-sm-column">
+				<div class="plan-level  row">
+					<div class="col-2 p-0 m-0">
+						<input type="checkbox" name="">
+					</div>
+					<div class="col-7 p-0 m-0">
+						<h6>Online Service</h6>
+						<p class="text-muted m-0">Acess to multiplayer games</p>
+					</div>
+					<div class="col-3 p-0 m-0 text-primary">
+						+$10/yr
+					</div>
+				</div>
+				<div class="plan-level  row">
+					<div class="col-2 p-0 m-0">
+						<input type="checkbox" name="">
+					</div>
+					<div class="col-7 p-0 m-0">
+						<h6>Large Storage</h6>
+						<p class="text-muted m-0">Extra 1TB of cloud SAve</p>
+					</div>
+					<div class="col-3 p-0 m-0 text-primary">
+						+$20/yr
+					</div>
+				</div>
+				<div class="plan-level  row">
+					<div class="col-2 p-0 m-0">
+						<input type="checkbox" name="">
+					</div>
+					<div class="col-7 p-0 m-0">
+						<h6>Customizable proifile</h6>
+						<p class="text-muted m-0">Custom theme on your profile</p>
+					</div>
+					<div class="col-3 p-0 m-0 text-primary">
+						+$20/yr
+					</div>
+				</div>
+				
+			</div>
+		</div>
+		<!-- fourthstep -->
+		<div class="d-none mainbox fourthstep shadow col-md-8 col-lg-9 p-md-5">
+			<h2>Finishing up</h2>
+			<small class="text-muted">Double check everything looks ok bofore confirming</small>
+			<div class="summerybox mt-5">
+				<div class=" p-0 m-0 d-flex">
+					<h6 class="text-primary">Arcde(Yearly)</h6>
+					<p class="text-primary">$90/yr</p>
+				</div>
+				<hr>
+				<div class=" p-0 m-0 d-flex">
+					<p class="text-muted p-0 m-0">Online Service</p>
+					<p>+$10/yr</p>
+				</div>
+				<div class=" p-0 m-0 d-flex">
+					<p class="text-muted p-0 m-0">Large Storage</p>
+					<p>+$20/yr</p>
+				</div>
+			</div>
+			<div class="totalresult d-flex">
+				<h6 class="text-muted">Total (per year)</h6>
+				<p class="text-primary">$15/yr</p>
+			</div>
+		</div>	
+		<!-- fifthstep	 -->
+		<div class="d-none mainbox fifthstep shadow col-md-8 col-lg-9 p-md-5">
+			<div class="donepart">
+				<img src="images/icon-thank-you.svg">
+				<h2>Thank you!</h2>
+				<p class="text-muted">
+					Thanks for confirming your subscription! We hope you have fun using our platfrorm . If you ever need support , please feel free to email us at support@adiladeel.com
+				</p>
+			</div>
+		</div>
+		<!-- controls button -->
+		<div class="controls-step p-2" >
+			<button class="back btn Back">Go Back</button>
+			<button class="btn btn-primary Next">Next Step</button>
+		</div>
+	</main>
+</div>
+</body>
+<script type="text/javascript" src="script.js"></script>
+</html>

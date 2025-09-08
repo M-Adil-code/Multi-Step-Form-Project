@@ -1,0 +1,243 @@
+*{
+	padding: 0px;
+	margin: 0px;
+}
+h2{
+	font-weight: 700;
+	color: rgba(0, 0, 20, 1.0);
+	font-size: 2em;
+}
+
+
+.container-fluid{
+	background: hsl(206, 94%, 87%);
+	min-height: 100vh !important;
+	width: 100%;
+	margin: 0px;
+	padding: 0px;
+}
+main{
+	justify-self: center;
+	
+	width: clamp(320px, 100%, 1400px);
+	background: white;
+	min-height: 100vh;
+	border-radius: 8px;
+	padding: 12px;
+	overflow: hidden;
+	box-sizing: border-box;
+}
+.sidebar{
+	background: url('images/bg-sidebar-desktop.svg');
+	background-size: cover;
+	border-radius: 8px;
+	display: flex;
+	
+	gap: 15px;
+}
+.sidebar-links p{
+	padding: 0px;
+	margin: 0px;
+	font-size: 16px;
+	font-weight: 600;
+	color: white;
+	text-transform: uppercase;
+}
+.sidebar-links{
+	display: flex;
+	gap: 18px;
+	justify-content: start;
+	align-items: center;
+}
+.sidebar-links .sidebar-numbers{
+	width: 40px;
+	border: 2px solid white;
+	border-radius: 50%;
+	height: 40px;
+	pointer-events: none;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	align-self: center;
+	color: white;
+	font-weight: 700;
+}
+.sidebar-links .sidebar-numbers-slected{
+	background:hsl(206, 94%, 87%);
+	border: 2px solid transparent;
+}
+.firststep input{
+	margin: 12px;
+	padding: 5px;
+	border-radius: 4px;
+	flex-basis: clamp(280px, 60vw, 600px);
+
+}
+.controls-step{
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	border-radius: 8px;
+	width: 60%;
+	display: flex;
+	justify-content: space-between;
+	background: transparent;
+}
+
+.sidebar-links .sidebar-text .text-muted{
+	color: rgba(256, 256, 256, 0.7) !important;
+	
+
+}
+@media (max-width: 768px){
+	.container-fluid{
+		padding: 0px !important;
+		height: auto !important;
+
+	}
+	main{
+		padding: 0px;
+		height: auto !important;
+	}
+	.secondstep{
+		height: 700px !important;
+		margin-bottom: 100px !important;
+	}
+	.sidebar{
+		background: url('images/bg-sidebar-mobile.svg');
+		background-size: cover;
+		justify-content: center;
+		align-items: start;
+		padding-top: 40px !important;
+		border-radius: 8px;
+		height: 35vh;
+	}
+	.controls-step{
+		width: 100%;
+		background: white;
+		bottom: 0px;
+		right: 0px;
+	}
+	.mainbox{
+		width: 95vw;
+		min-height: auto;
+		position: absolute;
+		top: 20vh;
+		border-radius: 8px;
+		background: white;
+		margin: auto;
+		padding: 20px 15%;
+		left: 2.5vw;
+		display: flex;
+		flex-direction: column;
+
+	}
+	.wraper{
+		background: wheat;
+	}
+	body{
+		background: wheat;
+	}
+	.plan-level-container{
+		flex-direction: column;
+	}
+	.plan-level-container h5 {
+		margin: 0px !important;
+	}
+	.plan-level{
+		display: flex;
+		align-items: center;
+		gap: 13px;
+	}
+	.thirdstep .plan-level{
+		justify-content: center;
+		align-items: center;
+		flex-wrap: nowrap;
+		gap: 0px;
+	}
+}
+.plan-level-container{
+
+	justify-content: flex-start;
+	gap: 1em;
+	margin-top: 3em;
+	flex-wrap: wrap;
+}
+.plan-level{
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	min-width: 150px;
+	padding: 1em;
+	background: whitesmoke;
+	border-radius: 6px;
+}
+.plan-level-container .selected{
+	border: 1px solid rgba(0, 0, 20, 0.8)!important;
+}
+
+.plan-level-container h5{
+	margin: 1.5em 0px 0px 0px;
+	padding: 0px !important;
+	font-size: 1em;
+}
+.plan-selector{
+	margin-top: 3em;
+	padding: 0.8em 1em;
+	
+	background: whitesmoke;
+	border-radius: 8px;
+	width: clamp(300px, 95%, 500px);
+}
+.plan-selector h5{
+	color: rgba(0, 0, 0, 0.5);
+	
+
+}
+.plan-selector .selected{
+	color: rgba(0, 0, 0, 1.0);
+}
+ input{
+ 	accent-color: blue;
+}
+
+.thirdstep .plan-level{
+	padding: 0.5em;
+	width: clamp(300px, 80%, 500px);
+	align-items: center;
+}
+
+.thirdstep .plan-level h6{
+	padding: 0px;
+	margin: 0px;
+}
+
+.fourthstep .summerybox{
+	background: whitesmoke;
+	padding: 1em;
+	border-radius: 8px;
+}
+.fourthstep .summerybox .d-flex{
+	display: flex !important;
+	flex-direction: row;
+	justify-content: space-between;
+}
+.totalresult{
+	border-radius: 8px;
+	margin-top: 2em;
+	background: whitesmoke;
+	padding: 0.5em 1em;
+	justify-content: space-between;
+}
+.fifthstep{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.fifthstep .donepart{
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	gap: 1em;
+
+}
