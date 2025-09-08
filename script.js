@@ -49,6 +49,9 @@ let check=()=>{
 		}
 
 	}
+	else if(index===2){
+		console.log('secondstep');
+	}
 }
 nextstep.addEventListener("click",()=>{
 
@@ -124,7 +127,37 @@ secondstep.querySelectorAll('.plan-level').forEach((item)=>{
 		})
 		
 	}
+});
+thirdstep.querySelectorAll('.plan-level').forEach((item)=>{
+	let input=item.querySelector('input')
+	console.log('welcome thirdstep')
+	item.onclick=()=>{
+
+		console.log('click thirdstep')
+		if(item.classList.contains('selected')){
+			
+			item.classList.remove('selected')
+		}
+		else{
+			console.log('this is input check')
+
+			
+			item.classList.add('selected')
+			input.checked=true;
+		}
+		let allplans=Array.from(thirdstep.querySelectorAll('.plan-level'))
+		let otherplans=allplans.filter((thisitem)=>{
+			return(thisitem!==item)
+		})
+		console.log(otherplans,'otherplans')
+		otherplans.forEach((ite)=>{
+			ite.classList.remove('selected')
+			input.checked=false;
+		})
+		
+	}
 })
+
 secondstep.querySelector('input').addEventListener('click',(e)=>{
 	let planlevelcontainer=secondstep.querySelector('.plan-level-container')
 	let planselector=secondstep.querySelector('.plan-selector')
@@ -143,21 +176,21 @@ secondstep.querySelector('input').addEventListener('click',(e)=>{
 		planlevelcontainer.children[2].querySelector('.text-muted').textContent='$15/mo';
 	}
 })
-thirdstep.querySelectorAll('.plan-level').forEach((item)=>{
-	let input=item.querySelector('input')
+// thirdstep.querySelectorAll('.plan-level').forEach((item)=>{
+// 	let input=item.querySelector('input')
 
-	item.onclick=()=>{
-		if(input.checked===true){
-			input.checked=false;
-			item.classList.remove('selected')
+// 	item.onclick=()=>{
+// 		if(input.checked===true){
+// 			input.checked=false;
+// 			item.classList.remove('selected')
 			
-		}
-		else{
-			input.checked=true;
-			item.classList.add('selected')
-		}
-	}
+// 		}
+// 		else{
+// 			input.checked=true;
+// 			item.classList.add('selected')
+// 		}
+// 	}
 	
 	
-})
+// })
 
