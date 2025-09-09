@@ -3,6 +3,7 @@ let backstep=document.querySelector('.Back')
 let firststepdiv=document.querySelector('.firststep')
 let secondstep=document.querySelector('.secondstep')
 let thirdstep=document.querySelector('.thirdstep')
+let fourthstep=document.querySelector('.fourthstep')
 let sidebar=document.querySelector('.sidebar')
 let main=document.querySelector('main')
 let index=0;
@@ -34,6 +35,18 @@ let check=()=>{
 		}
 	}
 	else if(index===1){
+		if(data.period==='monthly'){
+			console.log('this is monthly')
+			let prize=thirdstep.querySelectorAll('.prize')
+			prize[0].textContent='+$1/mo';
+			prize[1].textContent='+$2/mo';
+			prize[2].textContent='+$2/mo';
+		}else{
+			let prize=thirdstep.querySelectorAll('.prize')
+			prize[0].textContent='+$10/yr';
+			prize[1].textContent='+$20/yr';
+			prize[2].textContent='+$20/yr';
+		}
 		console.log('secondstep')
 		let period=secondstep.querySelector('input').checked===true ?'yearly':'monthly';
 		data.period=period;
@@ -50,7 +63,60 @@ let check=()=>{
 
 	}
 	else if(index===2){
-		console.log('secondstep');
+		console.log('thirdstep');
+
+
+
+		let allplans=Array.from(thirdstep.querySelectorAll('.plan-level'))
+		let selectedplans=allplans.filter((thisitem)=>{
+			return(thisitem.classList.contains('selected'))
+		})
+		data.addone=selectedplans;
+		
+		//otherplans
+		let summarytitle=fourthstep.querySelectorAll('h6')[0]
+		summarytitle.textContent=`${data.periodlevel} ( ${data.period} ) `;
+		summarytitle.nextElementSibling.textContent=data.periodprize;
+		let totalprizelabel=document.querySelector('.totalresult').children[0]
+		
+
+		let totalprizeplace=document.querySelector('.totalresult').children[1]
+		let totalprize=0;
+		
+		let addonesummery=document.querySelector('.addonesummery')
+		addonesummery.innerHTML=''
+		data.addone.forEach((item,i)=>{
+			totalprize=totalprize+Number(item.querySelector('.prize').textContent.match(/\d+/)[0])
+			console.log(item)
+			let div=document.createElement('div');
+			div.innerHTML=`<div class=" p-0 m-0 d-flex">
+									<p class="text-muted p-0 m-0">${item.querySelector('h6').textContent}</p>
+									<p>${item.querySelector('.prize').textContent}</p>
+								  </div>`
+			addonesummery.appendChild(div);						  
+		})
+		// 
+		console.log(totalprize,data.periodprize.match(/\d+/)[0]);
+		totalprize=totalprize+Number(data.periodprize.match(/\d+/)[0]);
+		
+		if(data.period=="monthly"){
+			totalprizelabel.textContent='Total (Per Month)'
+			document.querySelector('.totalresult').children[1].innerHTML=`$${totalprize}/mo`
+		}else{
+			totalprizelabel.textContent='Total (Per Year)';
+			document.querySelector('.totalresult').children[1].innerHTML=`$${totalprize}/yr`
+		}
+		if(selectedplans.length>=1){
+			return('ok')
+		}else{
+			return('nok')
+		}
+	}
+	else if(index===3){
+		console.log('fourthstep')
+		
+		return('ok')
+
 	}
 }
 nextstep.addEventListener("click",()=>{
@@ -133,27 +199,18 @@ thirdstep.querySelectorAll('.plan-level').forEach((item)=>{
 	console.log('welcome thirdstep')
 	item.onclick=()=>{
 
-		console.log('click thirdstep')
 		if(item.classList.contains('selected')){
-			
+			input.checked=false;
 			item.classList.remove('selected')
 		}
 		else{
-			console.log('this is input check')
-
 			
 			item.classList.add('selected')
+			
 			input.checked=true;
 		}
-		let allplans=Array.from(thirdstep.querySelectorAll('.plan-level'))
-		let otherplans=allplans.filter((thisitem)=>{
-			return(thisitem!==item)
-		})
-		console.log(otherplans,'otherplans')
-		otherplans.forEach((ite)=>{
-			ite.classList.remove('selected')
-			input.checked=false;
-		})
+		
+
 		
 	}
 })
